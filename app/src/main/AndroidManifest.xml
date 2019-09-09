@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
 
 
     <application
@@ -13,7 +15,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.HomeActivity"></activity>
+        <activity android:name=".view.HomeActivity">
+
+        </activity>
         <activity android:name=".view.SignUpActivity" />
         <activity android:name=".view.MainActivity">
             <intent-filter>

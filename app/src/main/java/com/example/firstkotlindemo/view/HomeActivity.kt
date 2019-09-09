@@ -16,6 +16,7 @@ import android.Manifest.permission
 import android.Manifest.permission.READ_CONTACTS
 import android.os.Build
 import android.database.Cursor
+import android.widget.AdapterView
 import com.example.firstkotlindemo.R
 
 
@@ -104,6 +105,7 @@ class HomeActivity : AppCompatActivity() {
 
         customAdapter = CustomAdapter(this, contactModelArrayList!!)
         listView!!.adapter = customAdapter
+
     }
 
 
