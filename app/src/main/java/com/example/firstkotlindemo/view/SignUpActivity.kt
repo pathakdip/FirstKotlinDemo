@@ -35,7 +35,7 @@ class SignUpActivity : AppCompatActivity() {
             Toast.makeText(activity,"Sign-up", Toast.LENGTH_LONG).show()
             Log.e("SignUpActivity","Sign-up button clicked")
             saveRecord(view)
-/////////////////////htytyyt
+
             startActivity<MainActivity>()
         }
 
