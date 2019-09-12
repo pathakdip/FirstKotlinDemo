@@ -5,13 +5,11 @@ import android.view.View
 import android.widget.Toast
 import androidx.databinding.BaseObservable
 import androidx.databinding.Bindable
-import androidx.databinding.ObservableField
 import androidx.databinding.library.baseAdapters.BR
 import androidx.lifecycle.ViewModel
-import com.example.firstkotlindemo.DatabaseHandler
+import com.example.firstkotlindemo.utils.DatabaseHandler
 import com.example.firstkotlindemo.model.EmpModelClass
 import com.example.firstkotlindemo.model.User
-import kotlinx.android.synthetic.main.activity_sign_up.*
 import java.util.*
 
 class UserViewModel(val user: User) : Observer,BaseObservable(){
@@ -21,28 +19,28 @@ class UserViewModel(val user: User) : Observer,BaseObservable(){
     }
 
     val userName: String
-    @Bindable get()
-    {
-        return user.name
-    }
+        @Bindable get()
+        {
+            return user.name
+        }
 
     val userEmail:String
-    @Bindable get()
-    {
-        return user.email
-    }
+        @Bindable get()
+        {
+            return user.email
+        }
 
     val password:String
-    @Bindable get()
-    {
-        return user.password
-    }
+        @Bindable get()
+        {
+            return user.password
+        }
 
     val contact:String
-    @Bindable get()
-    {
-        return user.contact
-    }
+        @Bindable get()
+        {
+            return user.contact
+        }
 
     override fun update(o: Observable?, arg: Any?) {
 
@@ -97,3 +95,4 @@ class UserViewModel(val user: User) : Observer,BaseObservable(){
     }
 
 }
+

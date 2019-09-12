@@ -1,6 +1,5 @@
-package com.example.firstkotlindemo
+package com.example.firstkotlindemo.utils
 
-import android.accounts.AccountManager.KEY_PASSWORD
 import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
@@ -9,7 +8,10 @@ import android.database.sqlite.SQLiteException
 import android.database.sqlite.SQLiteOpenHelper
 import com.example.firstkotlindemo.model.EmpModelClass
 
-class DatabaseHandler(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,null,DATABASE_VERSION) {
+class DatabaseHandler(context: Context): SQLiteOpenHelper(context,
+    DATABASE_NAME,null,
+    DATABASE_VERSION
+) {
     companion object {
         private val DATABASE_VERSION = 1
         private val DATABASE_NAME = "EmployeeDatabase"
@@ -119,7 +121,8 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,
         val selectionArgs = arrayOf(email, password)
 
         // query user table with conditions
-        val cursor = db.query(TABLE_CONTACTS, //Table to query
+        val cursor = db.query(
+            TABLE_CONTACTS, //Table to query
             columns, //columns to return
             selection, //columns for the WHERE clause
             selectionArgs, //The values for the WHERE clause

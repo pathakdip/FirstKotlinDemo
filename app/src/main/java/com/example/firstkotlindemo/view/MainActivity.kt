@@ -8,7 +8,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.library.baseAdapters.BR
-import com.example.firstkotlindemo.DatabaseHandler
+import com.example.firstkotlindemo.utils.DatabaseHandler
 import com.example.firstkotlindemo.R
 import com.example.firstkotlindemo.databinding.ActivityMainBinding
 import com.example.firstkotlindemo.model.User
@@ -30,43 +30,38 @@ class MainActivity : AppCompatActivity() {
         val user= User()
         val userViewModel=UserViewModel(user)
 
-        databaseHandler=DatabaseHandler (this)
+        databaseHandler= DatabaseHandler(this)
 
         //data binding layout
         val binding:ActivityMainBinding = DataBindingUtil.setContentView<ActivityMainBinding>(this,R.layout.activity_main)
         binding.setVariable(BR.loginModel,userViewModel)
 
         //login button action
-        btnLogin.setOnClickListener(object: View.OnClickListener {
-            override fun onClick(view: View): Unit {
-                // Handler code here.
-                Toast.makeText(activity,"Login",Toast.LENGTH_LONG).show()
-                Log.e("MainActivity","Login button clicked")
+        btnLogin.setOnClickListener { view ->
+            // Handler code here.
+            Toast.makeText(activity,"Login",Toast.LENGTH_LONG).show()
+            Log.e("MainActivity","Login button clicked")
 
-                checkUser(view)
-                //startActivity(Intent(this@MainActivity,HomeActivity::class.java))
-                //val intent = Intent(this@MainActivity,HomeActivity::class.java);
-                //val userName = ed_Login_Email.text.toString()
-                //val password = ed_Login_Password.text.toString()
-                /*intent.putExtra("Username", userName)
-                intent.putExtra("Password", password)
-                startActivity(intent)*/
+            checkUser(view)
+            //startActivity(Intent(this@MainActivity,HomeActivity::class.java))
+            //val intent = Intent(this@MainActivity,HomeActivity::class.java);
+            //val userName = ed_Login_Email.text.toString()
+            //val password = ed_Login_Password.text.toString()
+            /*intent.putExtra("Username", userName)
+                        intent.putExtra("Password", password)
+                        startActivity(intent)*/
 
-                //startActivity<HomeActivity>("Username" to userName,"Password" to password)
-            }
-        })
+            //startActivity<HomeActivity>("Username" to userName,"Password" to password)
+        }
 
         //sign up form link
-        txtSignUp.setOnClickListener(object: View.OnClickListener {
-            override fun onClick(view: View): Unit {
-                // Handler code here.
-                Log.e("MainActivity","Sign up link clicked")
+        txtSignUp.setOnClickListener {
+            // Handler code here.
+            Log.e("MainActivity","Sign up link clicked")
 
-                val intent = Intent(activity, SignUpActivity::class.java)
-                startActivity(intent)
-
-            }
-        })
+            val intent = Intent(activity, SignUpActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     fun checkUser(view: View)
@@ -83,7 +78,9 @@ class MainActivity : AppCompatActivity() {
             if(status){
                 Log.e("MainActivity","Login Successful")
                 Toast.makeText(view.context,"Login Successful", Toast.LENGTH_LONG).show()
+
                 startActivity<HomeActivity>("Username" to email)
+                //startActivity<DisplayDataActivity>()
 
             }
         }

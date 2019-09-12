@@ -16,8 +16,12 @@ import android.Manifest.permission
 import android.Manifest.permission.READ_CONTACTS
 import android.os.Build
 import android.database.Cursor
+import android.view.View
 import android.widget.AdapterView
+import android.widget.TextView
 import com.example.firstkotlindemo.R
+import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.startActivity
 
 
 class HomeActivity : AppCompatActivity() {
@@ -29,14 +33,19 @@ class HomeActivity : AppCompatActivity() {
 
     private val PERMISSIONS_REQUEST_READ_CONTACTS = 100
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
         val strUser: String = intent.getStringExtra("Username")
-        //var strPassword: String = intent.getStringExtra("Password")
-        txtHomeTitle.setText("Thank you for login "+" "+strUser)
+        txtHomeTitle.setText("Welcome "+" "+strUser)
+
+        btnDisplayData.setOnClickListener {
+            // Handler code here.
+            Log.e("HomeActivity","title clicked")
+
+            startActivity<DisplayDataActivity>()
+        }
 
         Log.e("HomeActivity","username from MainActivity: "+strUser)
 
@@ -107,6 +116,4 @@ class HomeActivity : AppCompatActivity() {
         listView!!.adapter = customAdapter
 
     }
-
-
 }

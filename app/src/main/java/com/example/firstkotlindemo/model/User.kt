@@ -11,8 +11,6 @@ class User:Observable()
         setChangedandNotify("id")
     }
 
-
-
     var name: String = ""
         set(value)
         {
@@ -43,23 +41,4 @@ class User:Observable()
         setChanged()
         notifyObservers(s)
     }
-
-    //for registration
-    /*constructor(name:String,email:String,password:String,contact:String):this()
-    {
-        this.name=name
-        this.email=email
-        this.password=password
-        this.contact=contact
-    }*/
-
-    //for login
-    /*constructor(email:String,password:String):this()
-    {
-        this.email=email
-        this.password=password
-    }*/
-
-
-
 }

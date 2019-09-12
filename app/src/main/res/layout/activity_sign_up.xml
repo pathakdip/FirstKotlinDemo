@@ -7,6 +7,11 @@
 
     <data>
         <import type="android.view.View"/>
+
+        <variable
+            name="regModel"
+            type="com.example.firstkotlindemo.model.User" />
+
         <variable
             name="registerModel"
             type="com.example.firstkotlindemo.viewmodel.UserViewModel" />
@@ -38,7 +43,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:hint="Name"
-        android:text="@{registerModel.userName}"
+        android:text="@{regModel.name}"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +57,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:hint="Email"
-        android:text="@{registerModel.userEmail}"
+        android:text="@{regModel.email}"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,7 +72,7 @@
         android:layout_marginEnd="8dp"
         android:inputType="textPassword"
         android:hint="Password"
-        android:text="@{registerModel.password}"
+        android:text="@{regModel.password}"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -82,7 +87,7 @@
         android:layout_marginEnd="8dp"
         android:inputType="number"
         android:hint="Contact"
-        android:text="@{registerModel.contact}"
+        android:text="@{regModel.contact}"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ed_Password" />

@@ -3,9 +3,9 @@
     package="com.example.firstkotlindemo">
 
     <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
-
+    <uses-permission android:name="android.permission.INTERNET" />
 
 
     <application
@@ -15,6 +15,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".view.MoreDataActivity">
+
+        </activity>
+        <activity android:name=".view.DisplayDataActivity">
+
+        </activity>
         <activity android:name=".view.HomeActivity">
 
         </activity>

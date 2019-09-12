@@ -1,6 +1,5 @@
 package com.example.firstkotlindemo.adapter
 
-import android.Manifest
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -10,19 +9,13 @@ import android.widget.TextView
 import android.widget.Toast
 import com.example.firstkotlindemo.R
 import com.example.firstkotlindemo.model.ContactModel
-import androidx.core.content.ContextCompat.startActivity
 import android.content.Intent
 import android.net.Uri
-import androidx.core.content.ContextCompat.startActivity
-import android.Manifest.permission
 import android.Manifest.permission.CALL_PHONE
 import android.app.Activity
 import androidx.core.app.ActivityCompat
 import android.content.pm.PackageManager
 import androidx.core.content.ContextCompat
-
-
-
 
 class CustomAdapter(private val context: Context, private val contactModelArrayList: ArrayList<ContactModel>) : BaseAdapter() {
 
